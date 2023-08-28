@@ -1,0 +1,23 @@
+#스크립트 파일
+ButtonController.cs : 왼쪽의 start 버튼 눌림 이벤트 관리
+Calibration.cs : Calibration 메인 컨트롤러
+ProgressBar.cs : 오른쪽 원형 Progressbar 랜더링
+
+
+#Calibration.cs 코드 
+
+Calibration_Phase 관련
+- Calibration 각 단계마다 public enum Calibration_Phase에 선언 (예)3초카운트다운, 대기 ...
+- 각 phase에서 다음 단계로 넘어갈때 moveToNextPhase()사용
+- 각 phase마다 번호 붙임(phase_num). 1부터 시작, 1씩 증가
+- 현재 예시 : Ready_Start -> Ready_Count -> Fist -> Ready_Start -> Ready_Count -> Palm	(Calibration_Phase)
+	  = 	1	->	2	->  3  ->	4     ->      5	     ->  6 	(phase_num)
+
+
+새로운 제스쳐 추가시 프로시져
+(현재는 Palm,Fist 2가지)
+1. Unity Scene에서 HandModel - Palm/Fist 둘중 하나 복사/붙여넣기 후 원하는 자세 회전 툴로 직접 수정.
+2. 새로운 HandModel의 태그 설정
+3. Calibration.cs의 initiateObject()에서 palm,fist참고해서 TAG사용해 오브젝트 불러옴
+4. Calibration_Phase 추가 및 관련 function 수정 
+(moveToNextPhase(), setInstructionText(), setPhaseText(), enableObject() 등)
