@@ -1,0 +1,8 @@
+#스크립트 파일
+CSVReader.cs : csv형식으로 저장된 데이터 파일 읽어옴
+TextScript.cs : 테이블 오른쪽의 (grabbed/not grabbed) 텍스트 표시
+EggFracture.cs : 계란 깨지는 효과
+HandMovement.cs : 읽어온 csv파일 기반으로 Hand Model을 움직임 
+PressureSensorinputController : 읽어온 csv 파일 기반으로 fsr값에 따라 손끝의 구 색상 변경
+RenderSkeletonHandModel : 빨간색 선으로 이루어진 Skeleton Model 그림
+
